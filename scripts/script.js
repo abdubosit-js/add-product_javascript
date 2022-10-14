@@ -53,11 +53,15 @@ class Product extends App {
         const deleted = await this.fetchApi(`/products/${id}`, 'DELETE').then((res) => window.location.href = "/")
     }
 
-    searchFunc(e) {
-        const value = e.target.value
-        const filterProducts = this.products.filter(product => product.title.toLowerCase().includes(value.toLowerCase()))
-        return filterProducts
-    }
+    
+    /* 
+        time does not work ....
+        searchFunc(e) {
+            const value = e.target.value
+            const filterProducts = this.products.filter(product => product.title.toLowerCase().includes(value.toLowerCase()))
+            return filterProducts
+        }
+    */
 
     logout() {
         localStorage.removeItem('username')
